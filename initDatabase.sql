@@ -6,7 +6,7 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: localhost (MySQL 5.6.26)
-# Database: Delivery
+# Database: delivery
 # Generation Time: 2015-10-23 13:48:04 +0000
 # ************************************************************
 
@@ -27,8 +27,8 @@ DROP TABLE IF EXISTS `boy`;
 
 CREATE TABLE `boy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `area` int(11) DEFAULT NULL,
-  `name` varchar(30) DEFAULT NULL,
+  `area` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,8 +41,8 @@ DROP TABLE IF EXISTS `customer`;
 
 CREATE TABLE `customer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `num_orders` int(11) DEFAULT NULL,
-  `name` varchar(30) DEFAULT NULL,
+  `num_orders` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -55,9 +55,9 @@ DROP TABLE IF EXISTS `food`;
 
 CREATE TABLE `food` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(128) DEFAULT NULL,
-  `price` double DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
+  `name` varchar(128) NOT NULL,
+  `price` double NOT NULL,
+  `quantity` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -70,8 +70,8 @@ DROP TABLE IF EXISTS `orders`;
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(50) DEFAULT NULL,
-  `price` double DEFAULT NULL,
+  `description` varchar(50) NOT NULL,
+  `price` double NOT NULL,
   `boy_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
