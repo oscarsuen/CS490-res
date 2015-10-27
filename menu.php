@@ -1,6 +1,6 @@
 <?php
 echo "hello world";
-    if($_POST['submit'] == "Submit") {
+    if($_POST['submit'] == "submit") {
 		
 		$errorMessage = "";
 
