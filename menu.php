@@ -10,20 +10,12 @@
         //make sure all fields are complete
 		if(empty($name)) {
 			$errorMessage .= "name";
-			echo "<div class='alert alert-danger' role='alert'>";
-			echo "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>";
-			echo "<span class='sr-only'>Error:</span>";
   			echo " You forgot to enter item name!";
-  			echo "</div>";
 
 		}
         if(0 == preg_match("/^\d\d?\.\d?\d?$/", $price)){
             $errorMessage .= "price";
-            echo "<div class='alert alert-danger' role='alert'>";
-			echo "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>";
-			echo "<span class='sr-only'>Error:</span>";
   			echo " Invalid Price!";
-  			echo "</div>";
         }
 
 
