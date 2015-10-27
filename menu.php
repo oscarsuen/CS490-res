@@ -1,4 +1,5 @@
 <?php
+echo "hello world";
     if($_POST['submit'] == "Submit") {
 		
 		$errorMessage = "";
@@ -22,10 +23,9 @@
 		
 		if(empty($errorMessage)) {
 			$db = mysql_connect("localhost","root",""); //connect to database
-			
 			if(!$db) die("Error connecting to MySQL database.");
 			mysql_select_db("delivery" ,$db);
-			
+            echo "you are here"
 			$sql = "INSERT INTO food (name, price) VALUES (".
 			PrepSQL($name) . ", " .
 			PrepSQL($price) . ")";
@@ -34,7 +34,7 @@
 
 			exit();
 		} else {
-			echo "<a href='menu.html' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Try Again</a>";
+			echo "nope :(";
 			}
 
 	}
