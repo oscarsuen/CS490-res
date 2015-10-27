@@ -1,9 +1,10 @@
 <?php
-    if($_POST['submit'] == "Submit") {
+echo "hello world";
+    if($_POST['submit'] == "submit") {
 		
 		$errorMessage = "";
 
-		$name = $_POST['Item Name'];
+		$name = $_POST['Name'];
 		$price = $_POST['Price'];
 
         
@@ -17,7 +18,7 @@
   			echo "</div>";
 
 		}
-        if(0 == preg_match("/^\d\d?\.\d?\d?$/", $price)){
+        if(0 == preg_match("/^\d\d?\.?\d?\d?$/", $price)){
             $errorMessage .= "price";
             echo "<div class='alert alert-danger' role='alert'>";
 			echo "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>";
