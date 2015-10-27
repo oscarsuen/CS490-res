@@ -39,21 +39,6 @@
 			PrepSQL($price) . ")";
 			mysql_query($sql);
 
-			$rollno = mysql_query("SELECT ID FROM book ORDER BY id DESC LIMIT 1");
-			
-
-			$row = mysql_fetch_array($rollno);
-			
-			echo "<div class='alert alert-success' role='alert'>";
-			echo "<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
-			echo "<span class='sr-only'>Success</span>";
-  			echo " Book added!";
-  			echo "</div>";	
-
-			echo("<p>Book ID: " . $row['ID']. "</p>");
-			echo("</br>");
-
-			echo "<a href='addbook.html' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Submit Another Entry</a>";
 
 			exit();
 		} else {
