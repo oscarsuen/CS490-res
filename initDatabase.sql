@@ -42,7 +42,7 @@ DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `num_orders` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL,
+  `name` varchar(30) UNIQUE NOT NULL,
   `password` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
