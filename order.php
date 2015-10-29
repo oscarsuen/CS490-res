@@ -13,10 +13,10 @@
                
                 $result = mysql_query("SELECT * FROM food");
 
-                echo "Food<br/> 
+                echo "
                 <table border = 1>
                 <tr><td>ID</td><td>name</td><td>price</td><td>order?</td></tr>";
-                while($row= mysql_fetch_array($bookresult))
+                while($row= mysql_fetch_array($result))
                       echo("<tr><td>".
                             $row['ID']."</td><td>".
                             $row['name']."</td><td>".
