@@ -1,5 +1,5 @@
 <?php
-	if (isset($_POST['submit']) && $_POST['submit'] == "Check") {
+	if (isset($_POST['submit']) && $_POST['submit'] == "Submit") {
 		
 		$errorMessage = "";
 
@@ -10,10 +10,13 @@
 			$errorMessage .= "<p>Enter your name</p>";
 		}
 		if (empty($varPassword)) {
-			$errorMessage .= "<p>Enter password</p>"
+			$errorMessage .= "<p>Enter password</p>";
 		}
 		
 		if (empty($errorMessage)) {
+			if (strcmp($varName,"admin")==0 && strcmp($varPassword,"password")) {
+				header("Location: admin.html")
+			}
 			$db = mysql_connect("localhost","root","");
 			
 			if(!$db) die("Error connecting to MySQL database.");
@@ -23,10 +26,10 @@
 			$usrPass = mysql_fetch_array($checkQuery)['password'];
 
 			if (strcmp($usrPass,$varPassword) == 0) {
-				header("Location: customer.html");
+				header("Location: customers.html");
 				exit();
 			} else {
-				echo "<p>Password doesn't match</p>"
+				echo "<p>Password doesn't match</p>";
 			}
 
 		} else {
