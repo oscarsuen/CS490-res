@@ -1,12 +1,9 @@
 <HTML>
-    <head><title>Add Menu Item</title></head>
+    <head><title>Order</title></head>
     <body>
-        Add Menu Item
+        Order
         <form action = "checkout.php" method="post">
             
-            Item name <input type = "text" name ="Name"><br>
-            Price<input type = "text" name="Price"><br>
-
             <?php
 
                 $db = mysql_connect("localhost","root","");
