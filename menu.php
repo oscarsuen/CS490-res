@@ -25,7 +25,6 @@ echo "hello world";
 			$db = mysql_connect("localhost","root",""); //connect to database
 			if(!$db) die("Error connecting to MySQL database.");
 			mysql_select_db("delivery" ,$db);
-            echo "you are here";
 			$sql = "INSERT INTO food (name, price) VALUES (".
 			PrepSQL($name) . ", " .
 			PrepSQL($price) . ")";
@@ -34,8 +33,8 @@ echo "hello world";
 
 			exit();
 		} else {
-			echo "nope :(";
-			}
+            echo "there has been a failure.";
+        }
 
 	}
 	
