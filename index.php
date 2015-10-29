@@ -26,7 +26,7 @@
 			$usrPass = mysql_fetch_array($checkQuery)['password'];
 
 			if (strcmp($usrPass,$varPassword) == 0) {
-				header("Location: customers.html");
+				header("Location: order.php");
 				exit();
 			} else {
 				echo "<p>Password doesn't match</p>";
