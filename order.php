@@ -18,10 +18,10 @@
                 <tr><td>ID</td><td>name</td><td>price</td><td>order?</td></tr>";
                 while($row= mysql_fetch_array($result))
                       echo("<tr><td>".
-                            $row['ID']."</td><td>".
+                            $row['id']."</td><td>".
                             $row['name']."</td><td>".
-                            $row['price']."</td></tr>".
-                            "<input type='checkbox' name='".$row['ID']."' value='".$row['ID']."'>");
+                            $row['price']."</td><td>".
+                            "<input type='checkbox' name='".$row['id']."' value='".$row['id']."'></td></tr>");
              echo "</table>";
 
             ?>
