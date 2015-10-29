@@ -14,7 +14,7 @@ echo "hello world";
   			echo " You forgot to enter item name!";
 
 		}
-        if(0 == preg_match("/^\d\d?\.\d?\d?$/", $price)){
+        if(0 == preg_match("/^\d\d?\.?\d?\d?$/", $price)){
             $errorMessage .= "price";
   			echo " Invalid Price!";
         }
