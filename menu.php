@@ -1,5 +1,4 @@
 <?php
-echo "hello world";
     if($_POST['submit'] == "submit") {
 		
 		$errorMessage = "";
