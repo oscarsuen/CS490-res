@@ -15,7 +15,7 @@
 		
 		if (empty($errorMessage)) {
 			if (strcmp($varName,"admin")==0 && strcmp($varPassword,"password")) {
-				header("Location: admin.html")
+				header("Location: admin.html");
 			}
 			$db = mysql_connect("localhost","root","");
 			
