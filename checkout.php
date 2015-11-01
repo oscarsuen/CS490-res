@@ -5,6 +5,10 @@
     mysql_select_db("delivery" ,$db);
     $result = mysql_query("SELECT * FROM food");
     
+    $items[];
+
+    while($row= mysql_fetch_array($result));
+        
 
     exit();
 ?>
