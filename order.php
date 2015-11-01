@@ -26,6 +26,14 @@
 
             ?>
             
+            Your Address: 
+                <input type="text" name="address">
+            <br>
+            Your area:
+                <input type="text" name="area">
+            <br>
+            Your customer ID:
+                <input type="text" name="id">
             
             <input type="submit" name="submit" value="submit"/>
 
