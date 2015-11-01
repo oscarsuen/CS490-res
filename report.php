@@ -20,26 +20,26 @@
             mysql_select_db("delivery" ,$db);
 
             if (isset($_POST['showcustomers'])) {
-                $customerresult = mysql_query("SELECT * FROM customers");
+                $customerresult = mysql_query("SELECT * FROM customer");
 
                 echo "<h3>Customers</h3><br/ ><table border='1'><tr><td>ID</td><td>Name</td><td>Orders</td></tr>";
                 while($row= mysql_fetch_array($customerresult))
                       echo("<tr><td>".
-                            $row['ID']."</td><td>".
+                            $row['id']."</td><td>".
                             $row['name']."</td><td>".
-                            $row['num_order']."</td></tr>");
+                            $row['num_orders']."</td></tr>");
              echo "</table>";
             }
 
             if (isset($_POST['showboys'])) {
-                $boysresult = mysql_query("SELECT * FROM boys");
+                $boysresult = mysql_query("SELECT * FROM boy");
 
                 echo "<h3>Boys</h3><br/ ><table border='1'><tr><td>ID</td><td>Name</td><td>Area</td></tr>";
                 while($row = mysql_fetch_array($boysresult))
                       echo("<tr><td>".
-                           $row['ID']."</td><td>".
+                           $row['id']."</td><td>".
                            $row['name']."</td><td>".
-                           $row['area']."</td></tr>");
+                           sprintf('%05d', $row['area'])."</td></tr>");
                 echo "</table>";
             }
 
@@ -49,7 +49,7 @@
                     WHERE B.id = O.boy_id AND C.id = O.customer_id");
 
                 echo "<h3>Orders</h3><br/ ><table border='1'><tr><td>Customer</td><td>Boy</td><td>Description</td><td>Price</td><td>ID</td></tr>";
-                while($row = mysql_fetch_array($loanresult))
+                while($row = mysql_fetch_array($ordersresult))
                       echo("<tr><td>".
                            $row['cname']."</td><td>".
                            $row['bname']."</td><td>".
@@ -60,11 +60,11 @@
             }
 
 
-            echo "<a href='report.html' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Submit Another Entry</a>";
+            echo "<a href='admin.html' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Submit Another Entry</a>";
             exit();
         }
         else {
-            echo "<a href='report.html' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Try Again</a>";
+            echo "<a href='admin.html' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-repeat' aria-hidden='true'></span> Try Again</a>";
         } 
     }
 
