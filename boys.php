@@ -3,8 +3,8 @@
 		
 		$errorMessage = "";
 
-		$name = $_POST['Name'];
-		$area = $_POST['Area'];
+		$name = $_POST['boy_name'];
+		$area = $_POST['boy_area'];
 
         
         //make sure all fields are complete

@@ -3,8 +3,8 @@
 		
 		$errorMessage = "";
 
-		$name = $_POST['Name'];
-		$price = $_POST['Price'];
+		$name = $_POST['item_name'];
+		$price = $_POST['item_price'];
 
         
         //make sure all fields are complete
