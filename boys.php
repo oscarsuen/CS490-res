@@ -1,5 +1,5 @@
 <?php
-\    if($_POST['submit'] == "submit") {
+    if($_POST['submit'] == "Submit") {
 		
 		$errorMessage = "";
 
@@ -13,8 +13,8 @@
   			echo " You forgot to enter a boy name!";
 
 		}
-        if(0 == preg_match("/^\d+$/", $price)){
-            $errorMessage .= "are";
+        if(0 == preg_match("/^\d+$/", $area)){
+            $errorMessage .= "area";
   			echo "You forgot to enter an area!";
         }
 
