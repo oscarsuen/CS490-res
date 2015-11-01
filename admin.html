@@ -5,6 +5,7 @@
 	<title>Restaurant System</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,9 +30,10 @@
       </div>
     </nav>
 	<div class="container theme-showcase" role="main">
-      
+      <div class="row">
       <div class="panel panel-default col-md-4"
       <form name="boys" role="form" action="boys.php" method="post">
+                
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input type="text" class="form-control" name="boy_name" value="" placeholder="Boy name">                                        
@@ -40,13 +42,14 @@
                 <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
                 <input type="text" class="form-control" name="boy_area" value="" placeholder="Area code">                                        
                 </div>
-                <br>
-                <button type="submit" class="btn btn-success col-sm-offset-1" name="submit" value="Submit"><span class="glyphicon glyphicon-plus"></span> Add Boy</button>
+                <br><br>
+                <button type="submit" class="btn btn-success col-sm-offset-1" name="submit" value="Submit"><span class="glyphicon glyphicon-plus"></span>  Add Boy</button>
             </form>
         </div>
 
       <div class="panel panel-default col-md-4"
       <form name="menu" role="form" action="menu.php" method="post">
+                
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                 <input type="text" class="form-control" name="item_name" value="" placeholder="Item name">                                        
@@ -55,11 +58,39 @@
                 <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
                 <input type="text" class="form-control" name="item_price" value="" placeholder="Item price">                                        
                 </div>
-                <br>
-                <button type="submit" class="btn btn-warning col-sm-offset-1" name="submit" value="Submit"><span class="glyphicon glyphicon-plus"></span> Add Menu Item</button>
+                <br><br>
+                <button type="submit" class="btn btn-warning col-sm-offset-1" name="submit" value="Submit"><span class="glyphicon glyphicon-plus"></span>  Add Menu Item</button>
             </form>
         </div>
         
+      <div class="panel panel-default col-md-4"
+      <form name="menu" class="form-horizontal" role="form" action="admin.php" method="post">
+      
+      <div class="checkbox checkbox-success">
+          <input name="showcustomers" value="book" type="checkbox">
+          <label for="showcustomers">
+              Display all customer names
+          </label>
+          </div>
+        <div class="checkbox checkbox-success">
+            <input name="showboys" value="member" type="checkbox">
+            <label for="showboys">
+              Display all delivery boy names
+            </label>
+        </div>
+        <div class="checkbox checkbox-success">
+            <input name="showorders" value="loan" type="checkbox">
+            <label for="showorders">
+               Display all orders
+            </label>
+        </div>
+    </br>
+    <div><button type="submit" name="submit" value="Submit" class="btn btn-primary"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Generate Report</button></div>
+    </div>
+    
+    </form>
+        </div>
+    </div>
 
   
   <!-- Optional theme -->
