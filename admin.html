@@ -22,28 +22,44 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <form name="login" class="navbar-form navbar-right" role="form" action="index.php" method="post">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input type="text" class="form-control" name="name" value="" placeholder="Name">                                        
-                </div>
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="password" class="form-control" name="password" value="" placeholder="Password">                                        
-                </div>
-
-                <button type="submit" class="btn btn-primary" name="submit" value="Submit">Admin Login</button>
-            </form>
+          
      
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 	<div class="container theme-showcase" role="main">
-		<div class="jumbotron">
-        <a href="boys.html" type="button" class="btn btn-info">Manage Cha Boys</a>
-        <a href="menu.html" type="button" class="btn btn-info">Manage Menu</a>
-  </div>
+      
+      <div class="panel panel-default col-md-4"
+      <form name="boys" role="form" action="boys.php" method="post">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="boy_name" value="" placeholder="Boy name">                                        
+                </div>
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                <input type="text" class="form-control" name="boy_area" value="" placeholder="Area code">                                        
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success col-sm-offset-1" name="submit" value="Submit"><span class="glyphicon glyphicon-plus"></span> Add Boy</button>
+            </form>
+        </div>
+
+      <div class="panel panel-default col-md-4"
+      <form name="menu" role="form" action="menu.php" method="post">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <input type="text" class="form-control" name="item_name" value="" placeholder="Item name">                                        
+                </div>
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                <input type="text" class="form-control" name="item_price" value="" placeholder="Item price">                                        
+                </div>
+                <br>
+                <button type="submit" class="btn btn-warning col-sm-offset-1" name="submit" value="Submit"><span class="glyphicon glyphicon-plus"></span> Add Menu Item</button>
+            </form>
+        </div>
+        
 
   
   <!-- Optional theme -->
