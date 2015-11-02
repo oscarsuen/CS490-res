@@ -55,6 +55,11 @@
             if(!$db) die("Error connecting to MySQL database.");
             mysql_select_db("delivery" ,$db);
 
+            echo "<div class='alert alert-dismissible alert-success'>
+  <button type='butto' class='close' data-dismiss='alert'>×</button><span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>
+  <strong> Reports generated!</strong> See the tables below.
+</div>";
+
             if (isset($_POST['showcustomers'])) {
                 $customerresult = mysql_query("SELECT * FROM customer");
 
