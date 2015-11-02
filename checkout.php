@@ -1,6 +1,6 @@
 <?php               
 
-    if($_POST['submit'] == 'submit'){
+    if($_POST['submit'] == 'Submit'){
         
         
         $address = $_POST['address'];
@@ -10,7 +10,7 @@
         
         $error = "";
         
-        if(preg_match("/^\d\d?$", $area) == 0){
+        if(preg_match("/^\d+$/", $area) == 0){
             $error.="You forgot to enter a valid area. ";
         }
         if(empty($id) && empty($name)){
@@ -49,13 +49,13 @@
             echo "Your boy is ". $row['name'];
             //assigns you a boy
 
-            mysql_query("INSERT INTO order (description, price, boy_id, customer_id) VALUES (".PrepSQL($items).", ".$price.", ".$row[id].", ".PrepSQL($id)); //creates the order
+            mysql_query("INSERT INTO order (description, price, boy_id, customer_id) VALUES (".PrepSQL($items).", ".$price.", ".$row[$id].", ".PrepSQL($id)); //creates the order
 
             exit();
         }else{
             echo $error;
         }
-        
+        }
         function PrepSQL($value) {
                 // Stripslashes
                 if(get_magic_quotes_gpc()) {
@@ -67,5 +67,4 @@
 
                 return($value);
             }
-    }
 ?>

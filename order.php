@@ -46,11 +46,9 @@
                 while($row= mysql_fetch_array($result))
         
                       echo ("<div class='container'>
-                            <div class='list-group'>
-                            <a href='' class='list-group-item clearfix'>".
-                            PrepSQL($row['id'])." ".
-                            PrepSQL($row['name'])." ".
-                            PrepSQL($row['price']).
+                            <div class='list-group'>".
+                            $row['name']." ".
+                            "$".$row['price'].
                             "<span class='pull-right'>
                                 <div class='input-group input-group-sm'>
                                
@@ -58,25 +56,11 @@
                 <input type='text' class='form-control' name='quantity' value='' placeholder='Quantity'>
                                                             
                 </div>
-                             </span>
-                             </a></div></div>");
-             
-            
-            function PrepSQL($value) {
-                // Stripslashes
-                if(get_magic_quotes_gpc()) {
-                    $value = stripslashes($value);
-                }
-
-                // Quote
-                $value = "'" . mysql_real_escape_string($value) . "'";
-
-                return($value);
-            }
+                             </span></div></div>");
 
             ?>
             <br>
-            <form name="order_customer_info" role="form" action="checkout.php" method="post">
+            <!--<form name="order_customer_info" role="form" action="checkout.php" method="post"> -->
                 
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -97,7 +81,7 @@
                 <br><br>
                 
                 <button type="submit" class="btn btn-success" name="submit" value="Submit"><span class="glyphicon glyphicon-check"></span>  Checkout</button>
-            </form>
+            <!--</form>-->
 
 
         </form>
