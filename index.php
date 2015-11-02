@@ -14,22 +14,10 @@
 		}
 		
 		if (empty($errorMessage)) {
-			if (strcmp($varName,"admin")==0 && strcmp($varPassword,"password")) {
+			if (strcmp($varName,"admin")==0 && strcmp($varPassword,"password")==0) {
 				header("Location: admin.html");
-			}
-			$db = mysql_connect("localhost","root","");
-			
-			if(!$db) die("Error connecting to MySQL database.");
-			mysql_select_db("delivery" ,$db);
-
-			$checkQuery = mysql_query("SELECT password FROM customer WHERE name='".$varName."'");
-			$usrPass = mysql_fetch_array($checkQuery)['password'];
-
-			if (strcmp($usrPass,$varPassword) == 0) {
-				header("Location: order.php");
-				exit();
 			} else {
-				echo "<p>Password doesn't match</p>";
+				echo "<p>Password doesn't match.";
 			}
 
 		} else {
