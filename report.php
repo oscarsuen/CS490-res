@@ -32,7 +32,7 @@
             }
 
             if (isset($_POST['showboys'])) {
-                $boysresult = mysql_query("SELECT * FROM boy ORDER BY area");
+                $boysresult = mysql_query("SELECT * FROM boy");
 
                 echo "<h3>Boys</h3><br/ ><table border='1'><tr><td>ID</td><td>Name</td><td>Area</td></tr>";
                 while($row = mysql_fetch_array($boysresult))
