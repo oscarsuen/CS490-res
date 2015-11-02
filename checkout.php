@@ -18,7 +18,7 @@
         }
         
         
-        if($error == ""){
+        if(empty($error)){
             $db = mysql_connect("localhost","root","");
             if(!$db) die("Error connecting to MySQL database.");
             mysql_select_db("delivery" ,$db);
@@ -34,7 +34,14 @@
                 }
             } 
 
-
+            if(empty($id)){
+                mysql_query("INSERT INTO customer(name, num_orders) VALUES (".PrepSQL($name).",1)");
+                $newid = mysql_query("SELECT ID FROM customer WHERE name = " . PrepSQL($name) . " ORDER BY id DESC LIMIT 1");
+                $row = mysql_fetch_array($newid);
+                echo "Your new customer ID is ".$row['ID'];
+            }else{
+                mysql_query("UPDATE customer SET num_rows = num_rows + 1 WHERE id = " . PrepSQL($id));
+            }
 
 
             mysql_query("INSERT INTO order ()"); //todo create the order
