@@ -73,8 +73,11 @@
             Your area:
                 <input type="text" name="area">
             <br>
-            Your customer ID:
+            Your customer ID (if applicable):
                 <input type="text" name="id">
+            <br>
+            Your name (if you don't have a customer ID):
+                <input type="text" name="name">
             
             <input type="submit" name="submit" value="submit"/>
 
