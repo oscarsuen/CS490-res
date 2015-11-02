@@ -39,10 +39,10 @@
 
         if(!isset($_POST['showcustomers'])&&!isset($_POST['showboys'])&&!isset($_POST['showorders'])) {
             $errorMessage .= "None";
-            echo "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>";
-            echo "<span class='sr-only'>Error:</span>";
-            echo " You didn't select anything!";
-            echo "</div>";
+            echo "<div class='alert alert-dismissible alert-danger'>
+  <button type='button' class='close' data-dismiss='alert'>×</button><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>
+  <strong> Oh snap!</strong> You haven't entered anything yet!
+</div>";
         }
           
         echo('<html>
