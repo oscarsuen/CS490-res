@@ -53,7 +53,7 @@
                                 <div class='input-group input-group-sm'>
                                
                 <span class='input-group-addon'><i class='glyphicon glyphicon-shopping-cart'></i></span>
-                <input type='text' class='form-control' name='quantity' value='' placeholder='Quantity'>
+                <input type='text' class='form-control' name='".$row['id']."' value='' placeholder='Quantity'>
                                                             
                 </div>
                              </span></div></div>");

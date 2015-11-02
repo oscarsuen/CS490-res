@@ -27,29 +27,32 @@
             $items = ""; // list of item ids
             $price = 0; //total price of the order
 
+            //works
             while($row= mysql_fetch_array($result)){
                 if($_POST["".$row['id']] > 0){
                     $items .= $row['id'] . " x" . $_POST["".$row['id']];
                     $price += $row['price'] * $_POST["".$row['id']];
                 }
-            } 
+            }
 
+            //works
             if(empty($id)){
                 mysql_query("INSERT INTO customer(name, num_orders) VALUES (".PrepSQL($name).",1)");
                 $newid = mysql_query("SELECT ID FROM customer WHERE name = " . PrepSQL($name) . " ORDER BY id DESC LIMIT 1");
                 $row = mysql_fetch_array($newid);
                 $id = $row['ID'];
                 echo "Your new customer ID is ".$row['ID'];
-            }else{
-                mysql_query("UPDATE customer SET num_rows = num_rows + 1 WHERE id = " . PrepSQL($id));
+            } else {
+                mysql_query("UPDATE customer SET num_orders = num_orders + 1 WHERE id = " . PrepSQL($id));
             }
 
+            //works
             $boys = mysql_query("SELECT * FROM boy WHERE area = ".PrepSQL($area));
             $row = mysql_fetch_array($boys);
             echo "Your boy is ". $row['name'];
             //assigns you a boy
-
-            mysql_query("INSERT INTO order (description, price, boy_id, customer_id) VALUES (".PrepSQL($items).", ".$price.", ".$row[$id].", ".PrepSQL($id)); //creates the order
+            
+            mysql_query("INSERT INTO orders (description, price, boy_id, customer_id) VALUES (".PrepSQL($items).", ".$price.", ".$row['id'].", ".$id.")"); //creates the order
 
             exit();
         }else{
