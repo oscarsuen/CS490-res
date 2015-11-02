@@ -47,13 +47,17 @@
         
                       echo ("<div class='container'>
                             <div class='list-group'>
-                            <a href='#' class='list-group-item clearfix'>".
-                            PrepSQL($row['id'])." ".PrepSQL($row['name'])." ".PrepSQL($row['price'])."
-                            <span class='pull-right'>
-                                <button class='btn btn-sm btn-success'><span class='glyphicon glyphicon-plus'></button>
-                            <button class='btn btn-sm btn-danger'>
-                                <span class='glyphicon glyphicon-minus'></span>
-                                </button>
+                            <a href='' class='list-group-item clearfix'>".
+                            PrepSQL($row['id'])." ".
+                            PrepSQL($row['name'])." ".
+                            PrepSQL($row['price']).
+                            "<span class='pull-right'>
+                                <div class='input-group input-group-sm'>
+                               
+                <span class='input-group-addon'><i class='glyphicon glyphicon-shopping-cart'></i></span>
+                <input type='text' class='form-control' name='quantity' value='' placeholder='Quantity'>
+                                                            
+                </div>
                              </span>
                              </a></div></div>");
              
@@ -88,11 +92,13 @@
 
         </form>
     
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  
 </body>
 </html>
 
