@@ -75,20 +75,30 @@
             }
 
             ?>
-            
-            Your Address: 
-                <input type="text" name="address">
             <br>
-            Your area:
-                <input type="text" name="area">
-            <br>
-            Your customer ID (if applicable):
-                <input type="text" name="id">
-            <br>
-            Your name (if you don't have a customer ID):
-                <input type="text" name="name">
-            
-            <input type="submit" name="submit" value="submit"/>
+            <form name="order_customer_info" role="form" action="checkout.php" method="post">
+                
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                <input type="text" class="form-control" name="address" value="" placeholder="Your address">                                        
+                </div>
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                <input type="text" class="form-control" name="area" value="" placeholder="Your area code">                                        
+                </div>
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-star-empty"></i></span>
+                <input type="text" class="form-control" name="id" value="" placeholder="Your customer ID (if applicable)"> 
+                </div>
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="name" value="" placeholder="Your name"> 
+                </div>
+                <br><br>
+                
+                <button type="submit" class="btn btn-success" name="submit" value="Submit"><span class="glyphicon glyphicon-check"></span>  Checkout</button>
+            </form>
+
 
         </form>
     
