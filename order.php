@@ -42,16 +42,21 @@
                
                 $result = mysql_query("SELECT * FROM food");
 
-                echo "
-                <table border = 1>
-                <tr><td>ID</td><td>name</td><td>price</td><td>order?</td></tr>";
+                
                 while($row= mysql_fetch_array($result))
-                      echo("<tr><td>".
-                            PrepSQL($row['id'])."</td><td>".
-                            PrepSQL($row['name'])."</td><td>".
-                            PrepSQL($row['price'])."</td><td>".
-                            "<input type='checkbox' name='".$row['id']." value=true></td></tr>");
-             echo "</table>";
+        
+                      echo ("<div class='container'>
+                            <div class='list-group'>
+                            <a href='#' class='list-group-item clearfix'>".
+                            PrepSQL($row['id'])." ".PrepSQL($row['name'])." ".PrepSQL($row['price'])."
+                            <span class='pull-right'>
+                                <button class='btn btn-sm btn-success'><span class='glyphicon glyphicon-plus'></button>
+                            <button class='btn btn-sm btn-danger'>
+                                <span class='glyphicon glyphicon-minus'></span>
+                                </button>
+                             </span>
+                             </a></div></div>");
+             
             
             function PrepSQL($value) {
                 // Stripslashes
