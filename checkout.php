@@ -30,7 +30,7 @@
             //works
             while($row= mysql_fetch_array($result)){
                 if($_POST["".$row['id']] > 0){
-                    $items .= $row['id'] . " x" . $_POST["".$row['id']];
+                    $items .= $row['id'] . "x" . $_POST["".$row['id']]." ";
                     $price += $row['price'] * $_POST["".$row['id']];
                 }
             }
