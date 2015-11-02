@@ -46,7 +46,8 @@
             if (isset($_POST['showorders'])) {
                 $ordersresult = mysql_query("SELECT C.name AS cname, B.name AS bname, O.description, O.price, O.id 
                     FROM boy B, customer C, orders O
-                    WHERE B.id = O.boy_id AND C.id = O.customer_id");
+                    WHERE B.id = O.boy_id AND C.id = O.customer_id
+                    ORDER BY B.name");
 
                 echo "<h3>Orders</h3><br/ ><table border='1'><tr><td>Customer</td><td>Boy</td><td>Description</td><td>Price</td><td>ID</td></tr>";
                 while($row = mysql_fetch_array($ordersresult))
