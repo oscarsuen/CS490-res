@@ -28,9 +28,9 @@
             $price = 0; //total price of the order
 
             while($row= mysql_fetch_array($result)){
-                if($_POST["".$row['id']] == 'true'){
-                    $items .= $row['id'] . " ";
-                    $price += $row['price'];
+                if($_POST["".$row['id']] > 0){
+                    $items .= $row['id'] . " x" . $_POST["".$row['id']];
+                    $price += $row['price'] * $_POST["".$row['id']];
                 }
             } 
 
